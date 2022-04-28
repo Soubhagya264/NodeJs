@@ -34,35 +34,32 @@
 
 //   console.log(`Got response: ${res.statusCode}`);
 // });
-// 
+//
 
 // post request
 const http = require("https");
 const data = JSON.stringify({
-    name: "John",
-    Job: "Programmer",
+  name: "John",
+  Job: "Programmer",
 });
 
 const options = {
-    hostname: "reqres.in",
-    path: '/api/users',
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    }
-    }
-    const req = http.request(options, (res) => {
-        let data = "";
-        console.log(`statusCode: ${res.statusCode}`);
-        res.on('data', (d) => {
-            
-            data += d;
-        }
-        )
-        res.on('end', () => {
-            console.log(data);
-        });
-
-        });
-req.write(data);       
-req.end(); 
+  hostname: "reqres.in",
+  path: "/api/users",
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+const req = http.request(options, (res) => {
+  let data = "";
+  console.log(`statusCode: ${res.statusCode}`);
+  res.on("data", (d) => {
+    data += d;
+  });
+  res.on("end", () => {
+    console.log(data);
+  });
+});
+req.write(data);
+req.end();
