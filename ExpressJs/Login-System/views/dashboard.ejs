@@ -1,0 +1,15 @@
+<%-include('header')-%>
+<div class="text-center center-div ">
+    <div class="container w-25  py-5 ">
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Dashboard</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Admin Pannel</h6>
+      <p class="card-text">This is admin panel for <%=locals.user ? user:"User"%>.</p>
+      <a href="#" class="card-link">show Users</a>
+      <a href="/route/logout" class="card-link">Logout</a>
+    </div>
+  </div>  
+</div>
+</div>
+<%-include('footer')-%>
