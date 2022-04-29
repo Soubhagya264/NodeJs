@@ -4,6 +4,12 @@ const path=require('path');
 
 app.set('view engine', 'pug');
 app.use(express.urlencoded({extended: true}));
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+    }));
 
 app.get('/', (req, res) => {
     res.render('index');
